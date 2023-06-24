@@ -25,6 +25,7 @@
 		9E68D14529D7233A003592F7 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68D14429D7233A003592F7 /* Destination.swift */; };
 		9E68D14729D72C7D003592F7 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68D14629D72C7D003592F7 /* Restaurant.swift */; };
 		9E68D14929D72F88003592F7 /* Creators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68D14829D72F88003592F7 /* Creators.swift */; };
+		9E7D41332A46FB3900957479 /* DestinationHeaderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D41322A46FB3900957479 /* DestinationHeaderContainer.swift */; };
 		9EF0EF1829F3C5FE0073C2A4 /* TileModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF0EF1729F3C5FE0073C2A4 /* TileModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		9E68D14429D7233A003592F7 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		9E68D14629D72C7D003592F7 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		9E68D14829D72F88003592F7 /* Creators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creators.swift; sourceTree = "<group>"; };
+		9E7D41322A46FB3900957479 /* DestinationHeaderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationHeaderContainer.swift; sourceTree = "<group>"; };
 		9EF0EF1729F3C5FE0073C2A4 /* TileModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		9E44AC1729CB284D00305CBC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				9E7D41312A46FB1F00957479 /* Destination */,
 				9E5D100D2A02783E00596021 /* Category */,
 				9EF0EF1629F3C5E20073C2A4 /* Utilities */,
 				9EF0EF1529F3BF720073C2A4 /* Supporing */,
@@ -130,6 +133,14 @@
 				9E5D10122A027CD500596021 /* Place.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9E7D41312A46FB1F00957479 /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				9E7D41322A46FB3900957479 /* DestinationHeaderContainer.swift */,
+			);
+			path = Destination;
 			sourceTree = "<group>";
 		};
 		9EF0EF1529F3BF720073C2A4 /* Supporing */ = {
@@ -230,6 +241,7 @@
 			files = (
 				9E44AC1B29CB284D00305CBC /* DiscoverView.swift in Sources */,
 				9EF0EF1829F3C5FE0073C2A4 /* TileModifier.swift in Sources */,
+				9E7D41332A46FB3900957479 /* DestinationHeaderContainer.swift in Sources */,
 				9E68D13829D721CA003592F7 /* PopularRestaurantsView.swift in Sources */,
 				9E68D13C29D7224D003592F7 /* TrendingCreatorsView.swift in Sources */,
 				9E5D10112A027C9B00596021 /* ActivityIndicator.swift in Sources */,
