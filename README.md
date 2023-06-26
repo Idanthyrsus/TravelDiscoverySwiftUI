@@ -1,6 +1,6 @@
 # TravelDiscoverySwiftUI
 
-Travelling app written using SwiftUI.
+### Travelling app written using SwiftUI and Swift Concurrency.
 
 
 
