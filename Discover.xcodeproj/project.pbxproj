@@ -26,6 +26,9 @@
 		9E68D14729D72C7D003592F7 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68D14629D72C7D003592F7 /* Restaurant.swift */; };
 		9E68D14929D72F88003592F7 /* Creators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68D14829D72F88003592F7 /* Creators.swift */; };
 		9E7D41332A46FB3900957479 /* DestinationHeaderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D41322A46FB3900957479 /* DestinationHeaderContainer.swift */; };
+		9EB171B92A47D8AB00221A8B /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB171B82A47D8AB00221A8B /* Attraction.swift */; };
+		9EB171BB2A47D91600221A8B /* PopularDestinationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB171BA2A47D91600221A8B /* PopularDestinationsViewModel.swift */; };
+		9EB171BD2A47F4D600221A8B /* DestinationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB171BC2A47F4D600221A8B /* DestinationDetails.swift */; };
 		9EF0EF1829F3C5FE0073C2A4 /* TileModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF0EF1729F3C5FE0073C2A4 /* TileModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		9E68D14629D72C7D003592F7 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		9E68D14829D72F88003592F7 /* Creators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creators.swift; sourceTree = "<group>"; };
 		9E7D41322A46FB3900957479 /* DestinationHeaderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationHeaderContainer.swift; sourceTree = "<group>"; };
+		9EB171B82A47D8AB00221A8B /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		9EB171BA2A47D91600221A8B /* PopularDestinationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationsViewModel.swift; sourceTree = "<group>"; };
+		9EB171BC2A47F4D600221A8B /* DestinationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetails.swift; sourceTree = "<group>"; };
 		9EF0EF1729F3C5FE0073C2A4 /* TileModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +123,6 @@
 				9E44AC1A29CB284D00305CBC /* DiscoverView.swift */,
 				9E68D13729D721CA003592F7 /* PopularRestaurantsView.swift */,
 				9E20E65429D499E8004FC48B /* DiscoverCategoriesView.swift */,
-				9E68D13929D7221D003592F7 /* PopularDestinationsView.swift */,
 				9E68D13B29D7224D003592F7 /* TrendingCreatorsView.swift */,
 			);
 			path = Views;
@@ -131,6 +136,8 @@
 				9E68D14629D72C7D003592F7 /* Restaurant.swift */,
 				9E68D14829D72F88003592F7 /* Creators.swift */,
 				9E5D10122A027CD500596021 /* Place.swift */,
+				9EB171B82A47D8AB00221A8B /* Attraction.swift */,
+				9EB171BC2A47F4D600221A8B /* DestinationDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,7 +145,9 @@
 		9E7D41312A46FB1F00957479 /* Destination */ = {
 			isa = PBXGroup;
 			children = (
+				9E68D13929D7221D003592F7 /* PopularDestinationsView.swift */,
 				9E7D41322A46FB3900957479 /* DestinationHeaderContainer.swift */,
+				9EB171BA2A47D91600221A8B /* PopularDestinationsViewModel.swift */,
 			);
 			path = Destination;
 			sourceTree = "<group>";
@@ -253,7 +262,10 @@
 				9E5D10132A027CD500596021 /* Place.swift in Sources */,
 				9E5D100F2A02786000596021 /* CategoryDetailsView.swift in Sources */,
 				9E68D14329D72324003592F7 /* Category.swift in Sources */,
+				9EB171BD2A47F4D600221A8B /* DestinationDetails.swift in Sources */,
 				9E68D14929D72F88003592F7 /* Creators.swift in Sources */,
+				9EB171BB2A47D91600221A8B /* PopularDestinationsViewModel.swift in Sources */,
+				9EB171B92A47D8AB00221A8B /* Attraction.swift in Sources */,
 				9E68D14729D72C7D003592F7 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

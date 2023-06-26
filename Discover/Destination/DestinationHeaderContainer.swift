@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DestinationHeaderContainer: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UIViewController
     
+    let imageURLStrings: [String]
+    
     func makeUIViewController(context: Context) -> UIViewController {
-        let pageViewController = CustomPageViewController()
+        let pageViewController = CustomPageViewController(imageURLStrings: imageURLStrings)
         return pageViewController
     }
     
@@ -21,23 +24,29 @@ struct DestinationHeaderContainer: UIViewControllerRepresentable {
 
 class CustomPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    let firstVc = UIHostingController(rootView: Text("First"))
-    let secondVc = UIHostingController(rootView: Text("Second"))
-    let thirdVc = UIHostingController(rootView: Text("Third"))
+    lazy var allControllers: [UIViewController] = []
     
-    lazy var allControllers: [UIViewController] = [
-        firstVc,
-        secondVc,
-        thirdVc
-    ]
-    
-    init() {
+    init(imageURLStrings: [String]) {
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.systemGray5
         UIPageControl.appearance().currentPageIndicatorTintColor = .red
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
         
-        setViewControllers([firstVc], direction: .forward, animated: true)
+        allControllers = imageURLStrings.map({ imageName in
+            let hostingController =
+            UIHostingController(rootView:
+                                    KFImage(URL(string: imageName))
+                                    .resizable()
+                                    .scaledToFill()
+                                  
+            )
+            hostingController.view.clipsToBounds = true
+            return hostingController
+        })
         
+        if let first = allControllers.first {
+            setViewControllers([first], direction: .forward, animated: true)
+        }
+       
         self.dataSource = self
         self.delegate = self
     }
@@ -81,8 +90,15 @@ class CustomPageViewController: UIPageViewController, UIPageViewControllerDataSo
 }
 
 struct DestinationHeaderContainer_Previews: PreviewProvider {
+    
+    static let imageURLStrings = [
+        "https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/7156c3c6-945e-4284-a796-915afdc158b5", "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/b1642068-5624-41cf-83f1-3f6dff8c1702", "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/2240d474-2237-4cd3-9919-562cd1bb439e"
+    ]
+    
     static var previews: some View {
-        DestinationHeaderContainer()
+        
+        DestinationHeaderContainer(imageURLStrings: imageURLStrings)
+            .frame(height: 300)
         NavigationView {
             
             PopularDestinationDetailsView(destination: Destination(name: "Paris",

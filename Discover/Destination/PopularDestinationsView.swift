@@ -29,7 +29,8 @@ struct PopularDestinationsView: View {
                HStack(spacing: 8.0) {
                    ForEach(destinations, id: \.self) { destination in
                        NavigationLink {
-                           PopularDestinationDetailsView(destination: destination)
+                           NavigationLazyView(PopularDestinationDetailsView(destination: destination))
+                          
                        } label: {
                            PopularDestinationTile(destination: destination)
                            .padding(.bottom)
@@ -42,6 +43,8 @@ struct PopularDestinationsView: View {
 }
 
 struct PopularDestinationDetailsView: View {
+    
+    @ObservedObject private var viewModel: PopularDestinationsViewModel
     
     let destination: Destination
     @State var region: MKCoordinateRegion
@@ -58,12 +61,17 @@ struct PopularDestinationDetailsView: View {
                                                        longitude: destination.longitude),
                                          span: .init(latitudeDelta: 0.1,
                                                      longitudeDelta: 0.1))
+        self.viewModel = .init(name: destination.name)
     }
+ 
 
     var body: some View {
         ScrollView {
-            DestinationHeaderContainer()
-                .frame(height: 250)
+            
+            if let photos = viewModel.destination?.photos {
+                DestinationHeaderContainer(imageURLStrings: photos)
+                    .frame(height: 250)
+            }
             
             VStack(alignment: .leading) {
                 Text(destination.name)
@@ -76,7 +84,7 @@ struct PopularDestinationDetailsView: View {
                     }
                 }
                 .padding(.top, 2)
-                Text("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.")
+                Text(viewModel.destination?.description ?? "")
                     .font(.system(size: 14))
                     .padding(.top, 8)
              
@@ -115,14 +123,6 @@ struct PopularDestinationDetailsView: View {
     }
 }
 
-struct Attraction: Identifiable {
-    var id = UUID().uuidString
-    let name: String
-    let imageName: String
-    let latitude: Double
-    let longitude: Double
-}
-
 struct CustomMapAnnotation: View {
     
     let attraction: Attraction
@@ -151,7 +151,6 @@ struct CustomMapAnnotation: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color(.init(white: 0, alpha: 0.5)))
                 )
-                
         }
         .shadow(radius: 5)
     }
